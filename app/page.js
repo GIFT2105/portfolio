@@ -7,7 +7,7 @@ import ContactForm from "@/components/contactForm";
 
 export default function Home() {
   return (
-    <main className="flex flex-col  h-auto w-screen  ">
+    <main className="flex flex-col h-auto w-screen  ">
     <Homecomp />
     <Nav />
     <Sects />
