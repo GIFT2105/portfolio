@@ -1,33 +1,105 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+#leftside {
+    background-image: url('../public/im2.jpg');
+    background-size: cover; /* Change to 'contain' */
+    background-position: center;
+    background-repeat: no-repeat;
+  
+  }
+
+
+
+  .flip-card {
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card-front,
+  
+  .flip-card-back {
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
+  @keyframes rotateGradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+
+
+
+
+  
+#anim{
+
+letter-spacing: 10px;
+font-family: monospace;
+border-right: 2px solid;
+width: 100%;
+white-space:nowrap;
+overflow: hidden;
+animation: 
+typing 2s steps(30),
+cursor step-start  infinite alternate;  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+@keyframes cursor{
+  50%{
+    border-color: transparent;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes typing{
+  from {width: 0;}
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+@media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 480px) 
+    and (orientation: portrait) {
+  body, html {
+    margin: 0;
+    padding: 0;
   }
+
+
+
+
+  .portrait-iphone {
+    display: flex;
+    flex-direction: column; /* Set flex direction to column */
+    width: 100vw; /* Set width to 100% of viewport width */
+    height: 100vh; /* Set height to 100% of viewport height */
+    font-size: 12px;
+    /* Add any other styles you need for iPhone screens in portrait orientation */
+  }
+
+  #leftside, .bg-gray-200 {
+    width: 100%; /* Set width to 100% of viewport width */
+    height: 50%; /* Set height to 50% of viewport height, adjust as needed */
+    box-sizing: border-box; /* Ensure padding and border don't increase element size */
+    font-size: 12px;
+  }
+
+  
+
 }
