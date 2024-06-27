@@ -4,15 +4,17 @@ import Homecomp from "../components/homecomp";
 import Image from "next/image";
 import Projects from "@/components/projects";
 import ContactForm from "@/components/contactForm";
+import Construction from "@/components/construction";
 
 export default function Home() {
   return (
     <main className="flex flex-col h-auto w-screen  ">
-    <Homecomp />
+      <Construction />
+    {/* <Homecomp />
     <Nav />
     <Sects />
     <Projects />
-    <ContactForm />
+    <ContactForm /> */}
 
     </main>
   );
